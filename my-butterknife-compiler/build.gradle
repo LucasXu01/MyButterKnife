@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':my-butterknife-annotations')
+    implementation 'com.squareup:javapoet:1.12.1'
+
+    // AS 4.3.1 ->  4.0.1 没有问题
+    // As-3.4.1  +  gradle-5.1.1-all + auto-service:1.0-rc4
+    compileOnly 'com.google.auto.service:auto-service:1.0-rc4'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
